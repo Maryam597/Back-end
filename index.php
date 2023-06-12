@@ -22,5 +22,30 @@
 
 }
 ?>
+<!-- 
+<script type="text/javascript">
+    function verify(){
+        var forename = document.getElementById("forename").value;
+        var surname = document.getElementById("surname").value;
+        var comments = document.getElementById("comments").value;
+
+        if(forename == null || forename == ""){
+            alert("Forename is empty");
+            return false;
+        }
+        else if(surname == null || surname == ""){
+            alert("Surname is empty");
+            return false;
+        }
+        else if(comments == null || comments == ""){
+            alert("Comments is empty");
+            return false;
+        }
+        document.register.submit();
+    }
+    </script> -->
+
+
+
 
 <?php include './includes/footer.html'; ?>
