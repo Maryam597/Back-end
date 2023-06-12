@@ -21,5 +21,6 @@
     }
 
 }
+?>
 
-
+<?php include './includes/footer.html'; ?>
