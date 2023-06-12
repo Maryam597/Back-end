@@ -1,21 +1,37 @@
-<form action="" method="post">
+
+
+
+
+<!-- d-flex -->
+
+<br>
+
+<form style="padding-left: 70px; padding-top: 20px;" action="" method="post">
 
     <div>
-        <label>Prénom</label>
-        <input type="text" name="Prénom"/>
+        <label> Prénom</label>
+        <input  class="w-25" type="text" name="Prénom" />
 
 
     </div>
 
+    <br>
+
     <div>
-        <label>Nom</label>
+        <label >Nom</label>
         <input type="text" name="nom" />
     </div>
+
+
+    <br>
 
     <div>
         <label>Age (de 10 à 80 ans)</label>
         <input type="text" name="âge" />
     </div>
+
+
+    <br>
 
     <div>
         <label>Taille (de 1,26 à 3m)</label>
@@ -23,10 +39,19 @@
     </div>
 
 
-    <div>
+    <br>
+
+<div style="display: flex; justify-content: stretch;" >
+    <p>Sexe</p>
+        <input type="radio" name="sexe" value="h" checked>homme<br>
+        <input type="radio" name="sexe" value="f">femme
+</div>
+
+<br>
+
+    <div>        
         <label>enregistrer</label>
-        <input type="submit" value="cliquer pour enregistrer"/>
+        <input type="submit" value="cliquer pour enregistrer" />
 
     </div>
-
 </form>
