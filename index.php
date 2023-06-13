@@ -11,12 +11,23 @@
 session_start();
 
 if (isset($_SESSION['table'])) $table - $_SESSION ['table'];
-$table=true
+$table=true ;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {}
+
+$prénom = $_POST['firstname'];
+$nom = $_POST['lastname'];
+$age = $_POST['age'];
+$taille = $_POST['height'];
+$genre = $_POST['gender'];
+
+
+
 ?>
 
-<?php if (!isset($table)) {include './includes/home.php';
-}
+<?php if (!isset($table)) {include './includes/home.php';}
 ?>
+
 
 
 
@@ -37,6 +48,7 @@ $table=true
 
 }
 ?>
+
 
 
 
