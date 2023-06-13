@@ -17,9 +17,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {}
 
 $prénom = $_POST['firstname'];
 $nom = $_POST['lastname'];
-$age = $_POST['age'];
+$âge = $_POST['age'];
 $taille = $_POST['height'];
 $genre = $_POST['gender'];
+
+
+$table = array();
+$table ['firstname'] = $prénom;
+$table ['age'] = $âge;
+$table ['height'] = $taille;
+$table ['gender'] = $genre;
+
+
+$_SESSION['table'] =$table;
+
 
 
 
