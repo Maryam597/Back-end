@@ -7,6 +7,19 @@
 <?php include './includes/nav.html'; ?>
 
 
+<?php 
+session_start();
+
+if (isset($_SESSION['table'])) $table - $_SESSION ['table'];
+$table=true
+?>
+
+<?php if (!isset($table)) {include './includes/home.php';
+}
+?>
+
+
+
 <?php
 
   if (isset($_GET['new'])) {
@@ -19,31 +32,14 @@
     } else if ($page === 'home.html') {
       include './includes/home.html';
     }
+   
+
 
 }
 ?>
-<!-- 
-<script type="text/javascript">
-    function verify(){
-        var forename = document.getElementById("forename").value;
-        var surname = document.getElementById("surname").value;
-        var comments = document.getElementById("comments").value;
 
-        if(forename == null || forename == ""){
-            alert("Forename is empty");
-            return false;
-        }
-        else if(surname == null || surname == ""){
-            alert("Surname is empty");
-            return false;
-        }
-        else if(comments == null || comments == ""){
-            alert("Comments is empty");
-            return false;
-        }
-        document.register.submit();
-    }
-    </script> -->
+
+
 
 
 
