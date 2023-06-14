@@ -1,3 +1,6 @@
+<?php 
+session_start(); 
+?>
 
 <?php include './includes/head.inc.html'; ?>
 <?php include './includes/header.inc.html'; ?>
@@ -8,16 +11,9 @@
 
 
 <?php 
-session_start();
 
 
-$_SESSION['table'] =$table;
-
-
-if (isset($_SESSION['table'])) $table - $_SESSION ['table'];
-$table=true ;
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $prénom = $_POST['firstname'];
 $nom = $_POST['lastname'];
@@ -35,8 +31,26 @@ $table ['gender'] = $genre;
 
 
 
+$_SESSION['table'] =$table;
 
-if (!isset($table)) {include './includes/home.php';}
+
+}
+
+
+if (isset($_SESSION['table']))
+{ $table - $_SESSION ['table'];
+$table=true ;}
+
+
+
+
+
+
+
+
+
+
+if (!isset($table)) {include './includes/home.html';}
 
 
 
