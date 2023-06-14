@@ -10,6 +10,10 @@
 <?php 
 session_start();
 
+
+$_SESSION['table'] =$table;
+
+
 if (isset($_SESSION['table'])) $table - $_SESSION ['table'];
 $table=true ;
 
@@ -24,33 +28,26 @@ $genre = $_POST['gender'];
 
 $table = array();
 $table ['firstname'] = $prénom;
+$table ['lastname'] = $nom;
 $table ['age'] = $âge;
 $table ['height'] = $taille;
 $table ['gender'] = $genre;
 
 
-$_SESSION['table'] =$table;
+
+
+if (!isset($table)) {include './includes/home.php';}
 
 
 
-
-?>
-
-<?php if (!isset($table)) {include './includes/home.php';}
-?>
-
-
-
-
-<?php
 
   if (isset($_GET['new'])) {
 
 
     $page = $_GET['new'];
 
-    if ($page === 'data.html') {
-      include './includes/data.html';
+    if ($page === 'form.html') {
+      include './includes/form.html';
     } else if ($page === 'home.html') {
       include './includes/home.html';
     }
