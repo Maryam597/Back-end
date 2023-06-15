@@ -30,7 +30,7 @@ if (isset($_GET['add'])) {
     'gender' => $_POST['gender']
   ];
   $_SESSION['table'] = $table;
-  echo '<h3>Vos données ont été enregistrées</h3>';
+  echo '<h3>Données sauvegardées</h3>';
 }
 
 include './includes/footer.html';
