@@ -1,86 +1,37 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 ?>
-
-
 
 <?php include './includes/head.inc.html'; ?>
 <?php include './includes/header.inc.html'; ?>
 
+<nav style="padding-left: 200px; padding-top: 20px;">
+<?php if (isset($_SESSION['table'])) : ?>
+    <a href="index.php"> <button type="button" class="btn btn-dark">Home</button></a>
+<?php endif; ?>
 
+<a href="index.php?add"> <button type="button" class="btn btn-dark">Ajouter des données</button></a>
+</nav>
 
-<?php include './includes/nav.html'; ?>
-
-
-<?php 
-
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$age = $_POST['age'];
-$height = $_POST['height'];
-$gender = $_POST['gender'];
-
-
-$table = array();
-$table ['firstname'] = $firstname;
-$table ['lastname'] = $lastname;
-$table ['age'] = $age;
-$table ['height'] = $height;
-$table ['gender'] = $gender;
-
-
-
-$_SESSION['table'] =$table;
-
-
-
+<?php
+if (isset($_SESSION['table'])) {
+  include_once './includes/home.html';
 }
 
-
-if (isset($_SESSION['table']))
-{ $table - $_SESSION ['table'];
-$table=true ;}
-
-
-
-
-
-
-
-
-
-
-// if (!isset($table)) {include './includes/home.html';}
-
-
-
-
-  if (isset($_GET['new'])) {
-
-
-    $page = $_GET['new'];
-
-    if ($page === 'form.html') {
-      include './includes/form.html';
-    } else if ($page === 'home.html') {
-      include './includes/home.html';
-    }
-   
-
-
+if (isset($_GET['add'])) {
+  include_once './includes/form.html';
+} elseif (isset($_POST['form'])) {
+  
+  $table = [
+    'firstname' => $_POST['firstname'],
+    'lastname' => $_POST['lastname'],
+    'age' => $_POST['age'],
+    'height' => $_POST['height'],
+    'gender' => $_POST['gender']
+  ];
+  $_SESSION['table'] = $table;
+  echo '<h2>Vos données ont été enregistrées</h2>';
 }
+
+include './includes/footer.html';
 ?>
-
-
-
-
-
-
-
-
-<?php include './includes/footer.html'; ?>
-
-
