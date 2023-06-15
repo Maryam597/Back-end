@@ -17,9 +17,11 @@ session_start();
 
   <?php if (!isset($_SESSION['table'])) {
   include_once './includes/home.html'; 
-}
+} 
 ?>
 </nav>
+
+
 
 
 
