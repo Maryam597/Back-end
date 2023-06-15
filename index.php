@@ -5,7 +5,7 @@ session_start();
 <?php include './includes/head.inc.html'; ?>
 <?php include './includes/header.inc.html'; ?>
 
-<nav style="padding-left: 200px; padding-top: 20px;">
+<nav style="padding-left: 10px; padding-top: 20px;">
 <?php if (isset($_SESSION['table'])) : ?>
     <a href="index.php"> <button type="button" class="btn btn-dark">Home</button></a>
 <?php endif; ?>
@@ -30,7 +30,7 @@ if (isset($_GET['add'])) {
     'gender' => $_POST['gender']
   ];
   $_SESSION['table'] = $table;
-  echo '<h2>Vos données ont été enregistrées</h2>';
+  echo '<h3>Vos données ont été enregistrées</h3>';
 }
 
 include './includes/footer.html';
