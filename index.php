@@ -7,7 +7,7 @@ session_start();
 
 <nav style="padding-left: 10px; padding-top: 20px;">
 <?php if (isset($_SESSION['table'])) : ?>
-    <a href="index.php"> <button type="button" class="btn btn-dark">Home</button></a>
+    <a href="index.php"> <button name="homebutton" type="button" class="btn btn-dark">Home</button></a>
 <?php endif; ?>
 
 <a href="index.php?add"> <button type="button" class="btn btn-dark">Ajouter des données</button></a>
@@ -16,7 +16,15 @@ session_start();
 <?php
 if (isset($_SESSION['table'])) {
   include_once './includes/home.html';
+
 }
+
+
+if (isset($_GET['index'])) {
+  include_once './includes/home.html';
+
+}
+
 
 if (isset($_GET['add'])) {
   include_once './includes/form.html';
