@@ -82,13 +82,20 @@ session_start();
 
         echo '<h2> Concaténation </h2>';
 
-        echo ucwords( '<p>' . 'M.' . ' ' . $_SESSION['table']['firstname'] . ' ' . $_SESSION['table']['lastname']) ;
+        echo ( '<p>' . 'M.' . ' ' . ucfirst($_SESSION['table']['firstname']) . ' ' . strtoupper($_SESSION['table']['lastname']));
 
 
         echo '<p>' . ' J\'ai' .' ' . $_SESSION['table']['age'] .' ' . 'ans et je mesure' .' ' . $_SESSION['table']['height'] .' ' . 'mètre.';
 
-        }
 
+
+
+      
+
+
+        }
+         
+     
 
 
       elseif (isset($_GET['del'])) {
