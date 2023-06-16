@@ -15,87 +15,85 @@ session_start();
 <div class="container-fluid">
   <div class="row">
 
-<nav class="col-md-3">
+    <nav class="col-md-3">
 
 
-<a href="index.php"> <button  name="homebutton" type="button" class="btn btn-dark">Home</button></a>
+      <a href="index.php"> <button name="homebutton" type="button" class="btn btn-dark">Home</button></a>
 
-  <a href="index.php?add"> <button type="button" class="btn btn-dark">Ajouter des données</button></a>
+      <a href="index.php?add"> <button type="button" class="btn btn-dark">Ajouter des données</button></a>
 
-  <?php if (isset($_SESSION['table'])) {
-  include_once './includes/home.html'; 
-} 
-?>
-</nav>
-
-
-
-
-
-<section class="col-md-9">
-
-<?php
-
-
-
-
-if (isset($_GET['add'])) {
-  include_once './includes/form.html';
-} elseif (isset($_POST['form'])) {
-
-  
-  $table = [
-    'firstname' => $_POST['firstname'],
-    'lastname' => $_POST['lastname'],
-    'age' => $_POST['age'],
-    'height' => $_POST['height'],
-    'gender' => $_POST['gender']
-  ];
-  $_SESSION['table'] = $table;
-  echo '<h3>Données sauvegardées</h3>';
-
-}
-  
-
-
-  elseif (isset($_SESSION['table'])) {
-    
-
-  if (isset($_GET['debugging'])) {
-  
-    echo '<pre>';
-
-    print_r($_SESSION['table']);
-    }
-
-    echo '</pre>';
-
-  }
-
-
-  
-  if (isset($_GET['concatenation'])) {
-
-    if($firstname) {
-      echo "M. $firstname";
-    }
-    
- 
-    
-    }
+      <?php if (isset($_SESSION['table'])) {
+        include_once './includes/home.html';
+      }
+      ?>
+    </nav>
 
 
 
 
 
-    if (isset($_GET['del'])) {
+    <section class="col-md-9">
 
-      session_destroy();
-      
-      
+
+    <?php
+    if (isset($_SESSION['table']))
+    include_once './includes/home.html';
+
+    ?>
+
+      <?php
+
+
+
+
+      if (isset($_GET['add'])) {
+        include_once './includes/form.html';
+      } elseif (isset($_POST['form'])) {
+
+
+        $table = [
+          'firstname' => $_POST['firstname'],
+          'lastname' => $_POST['lastname'],
+          'age' => $_POST['age'],
+          'height' => $_POST['height'],
+          'gender' => $_POST['gender']
+        ];
+        $_SESSION['table'] = $table;
+        echo '<h3>Données sauvegardées</h3>';
+      } elseif (isset($_SESSION['table'])) {
+
+
+        if (isset($_GET['debugging'])) {
+
+          echo '<pre>';
+
+          print_r($_SESSION['table']);
+        }
+
+        echo '</pre>';
       }
 
-    
+
+
+      if (isset($_GET['concatenation'])) {
+
+
+        echo '<h2> Concaténation </h2>';
+      }
+
+
+
+      if (isset($_GET['del'])) {
+
+        session_destroy();
+      }
+
+
+
+      ?>
+
+
+      <?php
 
 
 
@@ -103,39 +101,21 @@ if (isset($_GET['add'])) {
 
 
 
-?>
-
-
-<?php
 
 
 
 
 
 
+      ?>
 
 
 
-
-
-
-
-?> 
-
-
-
-</section>
-</div>
+    </section>
+  </div>
 </div>
 <?php
 
 include './includes/footer.html';
 
 ?>
-
-
-
-
-
-
-
