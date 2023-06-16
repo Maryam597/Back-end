@@ -22,10 +22,12 @@ session_start();
 
       <a href="index.php?add"> <button type="button" class="btn btn-dark">Ajouter des données</button></a>
 
-      <?php if (isset($_SESSION['table'])) {
+      <?php 
+      if (isset($_SESSION['table'])) {
         include_once './includes/home.html';
       }
       ?>
+
     </nav>
 
 
@@ -35,11 +37,11 @@ session_start();
     <section class="col-md-9">
 
 
-    <?php
+    <!-- <?php
     if (isset($_SESSION['table']))
     include_once './includes/home.html';
 
-    ?>
+    ?> -->
 
       <?php
 
@@ -80,7 +82,7 @@ session_start();
 
         echo '<h2> Concaténation </h2>';
 
-        echo '<p>' . 'M.' . $_SESSION['table']['firstname'] . ' ' . $_SESSION['table']['lastname'] ;
+        echo ucwords( '<p>' . 'M.' . ' ' . $_SESSION['table']['firstname'] . ' ' . $_SESSION['table']['lastname']) ;
 
 
         echo '<p>' . ' J\'ai' .' ' . $_SESSION['table']['age'] .' ' . 'ans et je mesure' .' ' . $_SESSION['table']['height'] .' ' . 'mètre.';
