@@ -14,6 +14,7 @@ session_start();
 
 <div class="container-fluid">
   <div class="row">
+
 <nav class="col-md-3">
 
 
@@ -73,6 +74,7 @@ if (isset($_GET['add'])) {
 
   
   if (isset($_GET['concatenation'])) {
+
 
  
     
