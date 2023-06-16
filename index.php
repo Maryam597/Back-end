@@ -43,6 +43,7 @@ if (isset($_GET['add'])) {
   include_once './includes/form.html';
 } elseif (isset($_POST['form'])) {
 
+  
   $table = [
     'firstname' => $_POST['firstname'],
     'lastname' => $_POST['lastname'],
@@ -75,7 +76,10 @@ if (isset($_GET['add'])) {
   
   if (isset($_GET['concatenation'])) {
 
-
+    if($firstname) {
+      echo "M. $firstname";
+    }
+    
  
     
     }
