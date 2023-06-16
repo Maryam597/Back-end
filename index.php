@@ -79,11 +79,17 @@ session_start();
 
 
         echo '<h2> Concaténation </h2>';
-      }
+
+        echo '<p>' . 'M.' . $_SESSION['table']['firstname'] . ' ' . $_SESSION['table']['lastname'] ;
+
+
+        echo '<p>' . ' J\'ai' .' ' . $_SESSION['table']['age'] .' ' . 'ans et je mesure' .' ' . $_SESSION['table']['height'] .' ' . 'mètre.';
+
+        }
 
 
 
-      if (isset($_GET['del'])) {
+      elseif (isset($_GET['del'])) {
 
         session_destroy();
       }
