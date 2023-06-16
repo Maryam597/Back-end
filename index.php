@@ -74,11 +74,8 @@ if (isset($_GET['add'])) {
   
   if (isset($_GET['concatenation'])) {
 
-    echo '<pre>';
-
-    print_r($_SESSION['table']);
-
-    echo '</pre>';
+ 
+    
     }
 
 
