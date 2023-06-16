@@ -1,6 +1,12 @@
 <?php
 session_start();
+
 ?>
+
+
+
+
+
 
 <?php include './includes/head.inc.html'; ?>
 <?php include './includes/header.inc.html'; ?>
@@ -9,13 +15,13 @@ session_start();
 <div class="container-fluid">
   <div class="row">
 <nav class="col-md-3">
-  <?php if (isset($_SESSION['table'])) : ?>
-    <a href="index.php"> <button  name="homebutton" type="button" class="btn btn-dark">Home</button></a>
-  <?php endif; ?>
+
+
+<a href="index.php"> <button  name="homebutton" type="button" class="btn btn-dark">Home</button></a>
 
   <a href="index.php?add"> <button type="button" class="btn btn-dark">Ajouter des données</button></a>
 
-  <?php if (!isset($_SESSION['table'])) {
+  <?php if (isset($_SESSION['table'])) {
   include_once './includes/home.html'; 
 } 
 ?>
@@ -28,9 +34,7 @@ session_start();
 <section class="col-md-9">
 
 <?php
-// if (!isset($_SESSION['table'])) {
-//   include_once './includes/home.html';
-// }
+
 
 
 
@@ -47,15 +51,76 @@ if (isset($_GET['add'])) {
   ];
   $_SESSION['table'] = $table;
   echo '<h3>Données sauvegardées</h3>';
-}
 
-// $delete = filter_input(INPUT_POST, 'delete');
-// if ($delete == 1) {
-//     session_destroy();
-// }
+}
+  
+
+
+  elseif (isset($_SESSION['table'])) {
+    
+
+  if (isset($_GET['debugging'])) {
+  
+    echo '<pre>';
+
+    print_r($_SESSION['table']);
+    }
+
+    echo '</pre>';
+
+  }
+
+
+  
+  if (isset($_GET['concatenation'])) {
+
+    echo '<pre>';
+
+    print_r($_SESSION['table']);
+
+    echo '</pre>';
+    }
+
+
+
+
+
+    if (isset($_GET['del'])) {
+
+      session_destroy();
+      
+      
+      }
+
+    
+
+
+
+
+
 
 
 ?>
+
+
+<?php
+
+
+
+
+
+
+
+
+
+
+
+
+
+?> 
+
+
+
 </section>
 </div>
 </div>
