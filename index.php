@@ -37,11 +37,7 @@ session_start();
     <section class="col-md-9">
 
 
-    <!-- <?php
-    if (isset($_SESSION['table']))
-    include_once './includes/home.html';
-
-    ?> -->
+ 
 
       <?php
 
@@ -89,14 +85,45 @@ session_start();
 
 
 
-        str_replace(',', '.', ['table']['height']);
+        // str_replace(',', '.', ['table']['height']);
 
 
         }
          
      
+        if (isset($_GET['loop'])) {
+
+          echo '<h2>Boucle</h2>';
+					echo '<h3> = = = Lecture du tableau à l\'aide d\'une boucle foreach</h3>';
+					
+          foreach ($_SESSION['table'] as $key => $value) {
+
+            echo '<h5>' .$key . ':' . $value . '</h5>';
+
+          }
+        }
 
 
+          if (isset($_GET['function'])) {
+            $table = $_SESSION['table'];
+            echo '<h2>Fonction</h2>';
+						echo '<h3>===> Lecture du tableau à l\'aide d\'une boucle foreach</h3>';
+
+            function readTable($table) {
+              $n = 0;
+              foreach ($_SESSION['table'] as $key => $value ) {
+
+                echo 'à la ligne n°' . $n++ . ' ' . 'correspond la clé' . ' ' . '"' . $key . '"' . ' ' . 'et contient' . ' ' . '"' . $value . '"' . "<br>";
+              }
+            }
+
+            readTable($table);
+
+
+          }
+        
+
+          
       elseif (isset($_GET['del'])) {
 
         session_destroy();
@@ -107,29 +134,12 @@ session_start();
       ?>
 
 
-      <?php
-
-
-
-
-
-
-
-
-
-
-
-
-
-      ?>
-
 
 
     </section>
   </div>
 </div>
+
 <?php
-
 include './includes/footer.html';
-
 ?>
