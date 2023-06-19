@@ -89,8 +89,7 @@ session_start();
 
 
 
-
-      
+        str_replace(',', '.', ['table']['height']);
 
 
         }
