@@ -94,7 +94,7 @@ session_start();
         if (isset($_GET['loop'])) {
 
           echo '<h2>Boucle</h2>';
-					echo '<h3> = = = Lecture du tableau à l\'aide d\'une boucle foreach</h3>';
+					echo '<h3> = = => Lecture du tableau à l\'aide d\'une boucle foreach</h3>';
 					
           foreach ($_SESSION['table'] as $key => $value) {
 
